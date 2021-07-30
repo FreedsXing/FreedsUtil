@@ -14,13 +14,13 @@ public class LogUtils {
 
     private static String TAG = "TAG";
 
+
     public static void setTag(String tag){
         TAG = tag;
     }
     public static void openLoging(){
         LOGING = true;
     }
-
 
     public static void v(String tag, String msg) {
         if (LOGING) {

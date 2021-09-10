@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class LogUtils {
 
-    private static boolean LOGING = true;
+    private static boolean LOGING = false;
 
     private static String TAG = "TAG";
 
@@ -21,6 +21,8 @@ public class LogUtils {
     public static void openLoging(){
         LOGING = true;
     }
+
+
 
     public static void v(String tag, String msg) {
         if (LOGING) {
@@ -53,6 +55,8 @@ public class LogUtils {
             Log.e(tag, msg);
         }
     }
+
+
 
     public static void v(String msg) {
         if (LOGING) {

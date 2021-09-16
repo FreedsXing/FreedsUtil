@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.zfxf.base.BaseApplication;
-
 /**
  * Created by Freeds on 2021/6/21 0021.
  */

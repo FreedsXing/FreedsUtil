@@ -2,10 +2,6 @@ package com.freeds.tool.util;
 
 import android.content.Context;
 
-import com.zfxf.base.BaseApplication;
-import com.zfxf.base.Constants;
-import com.zfxf.base.R;
-
 /**
  * Created by Freeds on 2021/6/1 0001.
  */

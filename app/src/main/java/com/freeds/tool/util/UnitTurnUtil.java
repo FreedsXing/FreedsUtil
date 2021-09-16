@@ -1,11 +1,16 @@
-package com.freeds.toolutil;
+package com.freeds.tool.util;
 
 import android.content.Context;
+
+import com.zfxf.base.BaseApplication;
+import com.zfxf.base.Constants;
+import com.zfxf.base.R;
 
 /**
  * Created by Freeds on 2021/6/1 0001.
  */
 public class UnitTurnUtil {
+
 
     /**
      * 根据手机分辨率 px 转成 sp

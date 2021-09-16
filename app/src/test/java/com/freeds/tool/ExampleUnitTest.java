@@ -1,4 +1,4 @@
-package com.freeds.toolutil;
+package com.freeds.tool;
 
 import org.junit.Test;
 

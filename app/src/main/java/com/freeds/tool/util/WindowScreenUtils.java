@@ -60,10 +60,10 @@ public class WindowScreenUtils {
 
 
     /**
-     * 获取手机实际宽度
+     * 获取手机实际宽度，除去虚拟键盘的宽度
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public static int getRealityWidth(Activity activity) {
+    public static int getWidth(Activity activity) {
         DisplayMetrics metrics = new DisplayMetrics();
         //这个方法获取可能不是真实屏幕的宽度
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -80,24 +80,15 @@ public class WindowScreenUtils {
 
 
     /**
-     * 获得状态栏的高度
-     *
+     * 获取状态栏高度
      * @param context
      * @return
      */
-    public static int getStatusHeight(Context context) {
-
-        int statusHeight = -1;
-        try {
-            Class<?> clazz = Class.forName("com.android.internal.R$dimen");
-            Object object = clazz.newInstance();
-            int height = Integer.parseInt(clazz.getField("status_bar_height")
-                    .get(object).toString());
-            statusHeight = context.getResources().getDimensionPixelSize(height);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return statusHeight;
+    public static int getStatusBarHeight(Context context) {
+        Resources resources = context.getResources();
+        int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
+        int height = resources.getDimensionPixelSize(resourceId);
+        return height;
     }
 
 
@@ -122,6 +113,18 @@ public class WindowScreenUtils {
         }
         return vh;
     }
+
+
+    public static int getVirtualBarHeigh(Activity activity) {
+        int titleHeight = 0;
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusHeight = frame.top;
+        titleHeight = activity.getWindow().findViewById(Window.ID_ANDROID_CONTENT).getTop() - statusHeight;
+
+        return titleHeight;
+    }
+
 
 
     //透明标题栏
